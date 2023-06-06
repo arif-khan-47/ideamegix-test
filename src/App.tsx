@@ -5,10 +5,8 @@ import { Provider } from 'react-redux';
 import store from './Redux/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Map from './pages/Map';
-import ChartPage  from './pages/ChartPage';
-// import ChartPage from './pages/ChartPage';
-// import 'leaflet/dist/leaflet.css'
+import LoginForm  from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 export interface IAllRoutes {
@@ -22,12 +20,12 @@ export const AllRoutes: IAllRoutes[] = [
     element: <HomePage />,
   },
   {
-    path: `/chart`,
-    element: <ChartPage />,
+    path: `/login`,
+    element: <LoginForm />,
   },
   {
-    path: `/map`,
-    element: <Map />,
+    path: `/register`,
+    element: <RegisterPage />,
   },
 ]
 

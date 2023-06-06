@@ -23,7 +23,6 @@ const Layout = ({
         <nav className='col-span-1 h-screen bg-[#F0564F] sticky top-0 bottom-0 left-0'>
           {!hideSidebar && <Sidebar />}
         </nav>
-        {/* <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" /> */}
         <main className={`col-span-5 min-h-screen`}>{children}</main>
         {/* {!hideFooter && (
           <footer>
