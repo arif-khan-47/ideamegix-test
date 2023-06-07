@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './Sidebar';
+import Header from './Header';
 
 type ILayoutProps = {
   hideSidebar?: boolean;
@@ -16,14 +16,14 @@ const Layout = ({
 }: ILayoutProps) => {
   return (
     <div>
-      <div className='grid grid-cols-6'>
+      <div className=''>
         <head>
           <title>{title}</title>
         </head>
-        <nav className='col-span-1 h-screen bg-[#F0564F] sticky top-0 bottom-0 left-0'>
-          {!hideSidebar && <Sidebar />}
+        <nav className='m-auto container'>
+          {!hideSidebar && <Header />}
         </nav>
-        <main className={`col-span-5 min-h-screen`}>{children}</main>
+        <main className={``}>{children}</main>
         {/* {!hideFooter && (
           <footer>
             <Footer />

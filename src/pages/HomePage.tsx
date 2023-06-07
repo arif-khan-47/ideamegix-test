@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../Redux/store';
-import {setSearchQuery, setProducts, setIsLoading } from '../Redux/Slices/productSlice';
-import Header from '../components/Header';
+import { setSearchQuery, setProducts, setIsLoading } from '../Redux/Slices/productSlice';
+import Header from '../components/Layout/Header';
 import Sidebar from '../components/Sidebar';
 import { getAllProducts } from '../https';
 import ProductList from '../components/ProductList';
+import Layout from '../components/Layout/Layout';
 
 const HomePage: React.FC = () => {
   // const [isLoading, setisLoading] = useState<boolean>(true)
   const products = useSelector((state: RootState) => state.products.products) as any;
   const isLoading = useSelector((state: RootState) => state.products.isLoading);
-  const searchQuery = useSelector((state: RootState) => state.products.searchQuery);
 
 
 
@@ -43,23 +43,25 @@ const HomePage: React.FC = () => {
   // Use the state values and dispatch functions in your component
 
   return (
-    <div className='container m-auto'>
-      <Header />
+    <>
+      <Layout>
+        <div className='container m-auto'>
+          <div className='grid sm:grid-cols-6 mt-5'>
+            <div className='col-span-1'>
+              <Sidebar />
+            </div>
+            <div className='col-span-5'>
+              {
+                isLoading ?
+                  <div>Loading</div> :
+                  <ProductList products={products} />
+              }
 
-      <div className='grid sm:grid-cols-6'>
-        <div className='col-span-1'>
-          <Sidebar />
+            </div>
+          </div>
         </div>
-        <div className='col-span-5'>
-          {
-            isLoading ?
-              <div>Loading</div> :
-              <ProductList products={products} />
-          }
-
-        </div>
-      </div>
-    </div>
+      </Layout>
+    </>
   );
 };
 

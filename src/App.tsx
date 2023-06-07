@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import store from './Redux/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import LoginForm  from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import LoginPage  from './pages/LoginPage';
+import CartPage from './pages/CartPage';
+import OrderPlaced from './pages/OrderPlaced';
 
 
 export interface IAllRoutes {
@@ -20,13 +21,18 @@ export const AllRoutes: IAllRoutes[] = [
     element: <HomePage />,
   },
   {
-    path: `/login`,
-    element: <LoginForm />,
+    path: `/cart`,
+    element: <CartPage />,
   },
   {
-    path: `/register`,
-    element: <RegisterPage />,
+    path: `/login`,
+    element: <LoginPage />,
   },
+  {
+    path: `/order-placed`,
+    element: <OrderPlaced />,
+  },
+
 ]
 
 function App() {
