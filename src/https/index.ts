@@ -12,7 +12,7 @@ const api = axios.create({
 // auth endpoints
 // export const verifyOTP = (data: IVerifyOtpPayload) => api.post("/auth/verify-otp", data);
 export const login = (data: any) => api.post("/auth/login", data);
-// export const whoami = () => api.get("/auth/whoami");
+export const getAllProducts = () => api.get("/products");
 
 
 // export const loginWithEmail = (data: any) => api.post("/auth/login?auth_type=email", data);

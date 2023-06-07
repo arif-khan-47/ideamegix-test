@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   products: [],
-  filters: '',
+  selectedCategory: null,
   searchQuery: '',
+  isLoading: true
 };
 
 const productsSlice = createSlice({
@@ -13,15 +14,18 @@ const productsSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
-    setFilters: (state, action) => {
-      state.filters = action.payload;
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
     },
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
     },
-  },
+  }
 });
 
-export const { setProducts, setFilters, setSearchQuery } = productsSlice.actions;
+export const { setProducts, setSelectedCategory, setSearchQuery, setIsLoading } = productsSlice.actions;
 
 export default productsSlice.reducer;
