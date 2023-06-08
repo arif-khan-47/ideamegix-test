@@ -9,16 +9,15 @@ import { RootState } from '../../Redux/store';
 const Header: React.FC = () => {
   // const {cart} = useSelector((item)=>item.cartData)
   const cart = useSelector((state: RootState) => state.cartData.cart) as any;
-
+  const [open, setOpen] = useState<boolean>(false)
+  console.log(open)
 
   const cookies = new Cookies();
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
 
 
-  // cookies.set('token', 'dfghirestdfghitxrfycghj')
   const token = cookies.get('token')
-  console.log('token', token)
 
   const handleSearch = (e: any) => {
     setSearchValue(e.target.value)
@@ -37,16 +36,16 @@ const Header: React.FC = () => {
             </Link>
           </h1>
 
-          <a className="text-black hover:text-orange md:hidden" href="#">
-            <i className="fa fa-2x fa-bars"></i>
-          </a>
+          <div onClick={()=>setOpen(!open)} className="text-black hover:text-orange md:hidden">
+            dfghjk
+          </div>
         </div>
 
-        <div className="mb-4 w-full md:mb-0 md:w-1/4">
+        <div className={`mb-4 w-full md:mb-0 md:w-1/4 md:block ${open?'block':'hidden'} `}>
           <input className="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full" placeholder="Search Product Name" type="text" value={searchValue} onChange={handleSearch} />
         </div>
 
-        <nav>
+        <nav className={`md:block ${open?'block':'hidden'}`}>
           <ul className="list-reset md:flex md:items-center">
             {
               token ?

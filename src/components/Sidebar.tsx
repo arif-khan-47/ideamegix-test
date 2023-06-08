@@ -40,7 +40,7 @@ const Sidebar = () => {
             <li onClick={() => handleCategoryClick("")} className={`${tab == '' ? 'text-red-600 font-bold' : ''} cursor-pointer mb-2`}>All</li>
             {
               categories?.map((item: string, index: number) => (
-                <li onClick={() => handleCategoryClick(item)} className={`${tab == item ? 'text-red-600 font-bold' : ''} capitalize cursor-pointer mb-2`}>{item}</li>
+                <li key={index} onClick={() => handleCategoryClick(item)} className={`${tab == item ? 'text-red-600 font-bold' : ''} capitalize cursor-pointer mb-2`}>{item}</li>
               ))
             }
           </>

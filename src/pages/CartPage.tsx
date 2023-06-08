@@ -50,7 +50,7 @@ function CartPage() {
                 {
                     cart.length > 0 && (
                         cart.map((item: any, index: number) => (
-                            <div className="flex items-center w-[100%] bg-gray-300 mt-5 rounded-md">
+                            <div key={index} className="flex items-center w-[100%] bg-gray-300 mt-5 rounded-md">
                                 <span className="text-center w-1/12 font-semibold text-sm">{index + 1}</span>
 
                                 <div className="flex w-2/5">
