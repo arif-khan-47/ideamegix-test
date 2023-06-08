@@ -74,7 +74,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
     <div className='flex justify-center flex-wrap gap-3 mb-10 mt-5'>
       {filteredProducts.map((product: any, index: any) => (
-        <div key={index} onClick={() => addIntoCart(product)} className="w-60 bg-green-200 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl cursor-pointer" onMouseOver={() => setIsHover(index)} onMouseOut={() => setIsHover(undefined)}>
+        <div key={index} onClick={() => addIntoCart(product)} className="md:w-60 w-44 bg-green-200 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl cursor-pointer" onMouseOver={() => setIsHover(index)} onMouseOut={() => setIsHover(undefined)}>
           <div className='relative bg-white'>
             {
               isHover === index ?
@@ -86,9 +86,9 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
                 :
                 null
             }
-            <img src={product.image} alt="Product" className="h-60 w-60 object-contain rounded-t-xl" />
+            <img src={product.image} alt="Product" className="md:h-60 h-44 md:w-60 w-44  object-contain rounded-t-xl" />
           </div>
-          <div className="px-4 py-3 w-60">
+          <div className="px-4 py-3 md:w-60 w-44">
             <span className="text-gray-400 mr-3 uppercase text-xs">{product.category}</span>
             <p className="text-lg font-bold text-black truncate block capitalize">{product.title}</p>
             <div className="flex items-center">

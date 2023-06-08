@@ -38,7 +38,7 @@ function CartPage() {
             <div className='m-auto container pb-10'>
                 {
                     cart.length > 0 ?
-                        <div className='flex justify-end mt-5 mb-10'>
+                        <div className='flex justify-end mt-5 mb-10 mx-5 md:mx-0'>
                             <Link to={'/order-placed'}>
                             <div className='bg-green-300 px-3 py-2 text-xl font-semibold cursor-pointer rounded-md'>Place All Order</div>
                             </Link>
@@ -58,13 +58,13 @@ function CartPage() {
                                         <img className="h-24 rounded-md" src={item.image} alt="" />
                                     </div>
                                     <div className="flex flex-col justify-between ml-4 flex-grow">
-                                        <span className="font-bold text-xl my-auto">{item.title}</span>
+                                        <span className="font-bold md:text-xl my-auto">{item.title}</span>
                                     </div>
                                 </div>
                                 <span className="text-center w-1/5 font-semibold text-sm">{item.category}</span>
-                                <span className="text-center w-1/5 font-semibold text-xl">${item.price}</span>
+                                <span className="text-center w-1/5 font-semibold md:text-xl">${item.price}</span>
                                 <div className="flex justify-center w-1/5">
-                                    <div onClick={() => removeFromCart(item.id)} className="font-semibold hover:text-red-500 text-gray-500 text-xl cursor-pointer">Remove</div>
+                                    <div onClick={() => removeFromCart(item.id)} className="font-semibold hover:text-red-500 text-gray-500 md:text-xl cursor-pointer">Remove</div>
                                 </div>
                             </div>
                         ))

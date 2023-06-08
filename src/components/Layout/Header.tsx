@@ -38,12 +38,18 @@ const Header: React.FC = () => {
             </Link>
           </h1>
 
-          <div onClick={() => setOpen(!open)} className="text-black cursor-pointer hover:text-orange md:hidden">
+          <div onClick={() => setOpen(!open)} className="text-black cursor-pointer hover:text-orange md:hidden relative">
             {
               open ?
-                <IoClose className='h-8 w-8' />
-                :
+              <IoClose className='h-8 w-8' />
+              :
+              <>
+              {
+                cart.length>0&&
+              <div className='absolute right-0 top-0 bg-red-600 rounded-full px-1 text-[10px]'>{cart.length}</div>
+              }
                 <CgMenuRightAlt className='h-8 w-8' />
+              </>
             }
           </div>
         </div>

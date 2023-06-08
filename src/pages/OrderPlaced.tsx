@@ -33,9 +33,9 @@ function OrderPlaced() {
                 <div className='flex h-screen -mt-40 lg:-mt-20'>
                     {
                         cart.length === 0 ?
-                            <div className='m-auto text-2xl font-bold'>Sorry! You Don't have anything to place...</div>
+                            <div className='m-auto text-center text-2xl font-bold'>Sorry! You Don't have anything to place...</div>
                             :
-                            <div className='m-auto text-2xl font-bold'>Congractulations! Your Order Has Been Placed...</div>
+                            <div className='m-auto text-center text-2xl font-bold'>Congractulations! Your Order Has Been Placed...</div>
                     }
 
                 </div>

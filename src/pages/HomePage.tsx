@@ -45,12 +45,12 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Layout>
-        <div className='container m-auto'>
-          <div className='grid sm:grid-cols-6 mt-5'>
-            <div className='col-span-1'>
+        <div className='container m-auto overflow-x-hidden'>
+          <div className='grid md:grid-cols-6 mt-5'>
+            <div className='md:col-span-1'>
               <Sidebar />
             </div>
-            <div className='col-span-5'>
+            <div className='md:col-span-5'>
               {
                 isLoading ?
                   <div>Loading</div> :
