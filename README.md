@@ -1,3 +1,34 @@
+#user login 
+
+##1. 
+username:  mor_2314
+password : 83r5^_
+
+##2.
+username:   johnd 
+password : m38rmF$
+
+
+#Routes
+
+##login route
+/login
+
+##homepage
+/
+
+##cart route
+/cart
+
+##order placed route
+/order-placed
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
