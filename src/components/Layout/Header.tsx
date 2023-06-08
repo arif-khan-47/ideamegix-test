@@ -5,6 +5,8 @@ import { setSearchQuery } from '../../Redux/Slices/productSlice';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
 import { RootState } from '../../Redux/store';
+import { CgMenuRightAlt } from 'react-icons/cg';
+import { IoClose } from 'react-icons/io5'
 
 const Header: React.FC = () => {
   // const {cart} = useSelector((item)=>item.cartData)
@@ -36,28 +38,33 @@ const Header: React.FC = () => {
             </Link>
           </h1>
 
-          <div onClick={()=>setOpen(!open)} className="text-black hover:text-orange md:hidden">
-            dfghjk
+          <div onClick={() => setOpen(!open)} className="text-black cursor-pointer hover:text-orange md:hidden">
+            {
+              open ?
+                <IoClose className='h-8 w-8' />
+                :
+                <CgMenuRightAlt className='h-8 w-8' />
+            }
           </div>
         </div>
 
-        <div className={`mb-4 w-full md:mb-0 md:w-1/4 md:block ${open?'block':'hidden'} `}>
+        <div className={`mb-4 w-full md:mb-0 md:w-1/4 md:block ${open ? 'block' : 'hidden'} `}>
           <input className="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full" placeholder="Search Product Name" type="text" value={searchValue} onChange={handleSearch} />
         </div>
 
-        <nav className={`md:block ${open?'block':'hidden'}`}>
+        <nav className={`md:block ${open ? 'block' : 'hidden'}`}>
           <ul className="list-reset md:flex md:items-center">
             {
               token ?
-              <>
-              <li className="md:ml-4">
+                <>
+                  <li className="md:ml-4">
                     <Link className="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" to="/cart">
                       Cart ({cart.length})
                     </Link>
                   </li>
-                <li onClick={() => { cookies.remove('token'); window.location.reload() }} className="md:ml-4 cursor-pointer block no-underline hover:underline py-2 text-red-500 hover:text-red-700 md:border-none md:p-0" >
-                  Logout
-                </li> 
+                  <li onClick={() => { cookies.remove('token'); window.location.reload() }} className="md:ml-4 cursor-pointer block no-underline hover:underline py-2 text-red-500 hover:text-red-700 md:border-none md:p-0" >
+                    Logout
+                  </li>
                 </>
                 :
                 <>
@@ -73,7 +80,7 @@ const Header: React.FC = () => {
                   </li>
                 </>
             }
-            
+
           </ul>
         </nav>
 
