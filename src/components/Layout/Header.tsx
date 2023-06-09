@@ -78,12 +78,6 @@ const Header: React.FC = () => {
                     <Link className="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" to="/login">
                       Login
                     </Link>
-                  </li>
-                  <li className="md:ml-4">
-                    <Link className="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" to="/register">
-                      Sign Up
-                    </Link>
-                  </li>
                 </>
             }
 
